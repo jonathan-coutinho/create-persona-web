@@ -1,3 +1,24 @@
-.userform {
-    background-color:blue;
+.myContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.myForm {
+    width: 80%;
+}
+.header {
+    color: white;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5en;
+}
+.myControl {
+    width: 80%;
+    text-align: center;
+}
+.mySpacingContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
 }
