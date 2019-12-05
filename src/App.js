@@ -1,11 +1,9 @@
 import React from 'react';
-
+import Routes from "./routes"
 
 function App() {
   return (
-    <div className="App">
-      <h2>EU TO SEM TEMPO VIADO</h2>
-    </div>
+   <Routes></Routes>
   );
 }
 
