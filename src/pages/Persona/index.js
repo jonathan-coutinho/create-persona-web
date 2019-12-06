@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./styles.css"
 import {Link} from "react-router-dom"
 import api from "../../service/api"
-import FirstForm from "../../components/Firstform"
+import FirstForm from "../../components/FirstForm"
 import SecondForm from "../../components/Secondform"
 import ThirdForm from "../../components/Thirdform"
 import FourthForm from "../../components/Fourthform"
