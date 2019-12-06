@@ -55,7 +55,7 @@ class ShowPersona extends Component {
               <h2 className="myName">{name}</h2>
               <h3 className="myRole">{role}</h3>
 
-              <p className="h3 font-weight-normal"><strong>Nome:</strong> {where_works}</p>
+              <p className="h3 font-weight-normal"><strong>Empresa:</strong> {where_works}</p>
               <p className="h3 font-weight-normal"><strong>Idade:</strong> {age}</p>
               <p className="h3 font-weight-normal"><strong>Gênero:</strong> {sex}</p>
               <p className="h3 font-weight-normal"><strong>Educação:</strong> {scolarship}</p>
