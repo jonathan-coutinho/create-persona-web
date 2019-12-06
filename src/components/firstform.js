@@ -29,7 +29,7 @@ class FirstForm extends Component {
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Ocupação:</label>
               <input
-               name ="hole"
+               name ="role"
                onChange ={this.props.handleChange}
                type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
         </div>
