@@ -4,6 +4,8 @@ import { BrowserRouter,Switch,Route} from 'react-router-dom'
 import Home from "./pages/Home"
 import UserForm from './pages/Userform'
 import Persona from "./pages/Persona"
+import ShowPersona from "./pages/ShowPersona"
+
 const Routes = () => {
     return (
         <BrowserRouter>
@@ -11,6 +13,7 @@ const Routes = () => {
                 <Route path exact = "/" component = {Home}></Route>
                 <Route path = "/user" component = {UserForm}></Route>
                 <Route path = "/persona/:ownerId" component = {Persona}></Route>
+                <Route path = "/showpersona/:PersonaId" component = {ShowPersona}></Route>
             </Switch>
         </BrowserRouter>
     )

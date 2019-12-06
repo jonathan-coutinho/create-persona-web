@@ -6,8 +6,7 @@ import FirstForm from "../../components/Firstform"
 import SecondForm from "../../components/Secondform"
 import ThirdForm from "../../components/Thirdform"
 import FourthForm from "../../components/Fourthform"
-import PesonasList from "../../components/PersonasList"
-import PersonasList from '../../components/PersonasList';
+import PersonasList from '../../components/PersonasList'
 
 class Persona extends Component {
 
@@ -77,6 +76,9 @@ class Persona extends Component {
                 company_role,
                 image,})
             console.log (response.data)
+            
+            return this.props.history.push(`/showpersona/${response.data.persona._id}`)
+
 
 
         }catch (err){
