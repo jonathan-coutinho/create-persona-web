@@ -20,12 +20,20 @@ class UserForm extends Component {
     saveUser = async () => {
         const {nome, cargo, email} = this.state
         this.setState ({loading:true})
+
         try{
+
             const response = await api.post ("/user" , {nome,cargo,email})
-            console.log (response)
+            console.log (response.data)
             this.setState ({loading:false})
+
+            return this.props.history.push(`/persona/${response.data.user._id}`)
         }catch (err){
-            console.log (err)
+            if (err.status === 401) {
+              if (err.data.user) {
+                 return this.props.history.push(`/persona/${err.data.user._id}`)
+              }
+            }
             this.setState ({loading:false})
         }
     }
@@ -64,14 +72,14 @@ class UserForm extends Component {
          
         </form>
             <footer className="mySpacingContainer">
-            <Link to ="/" type="submit" className="btn btn-primary btn-lg">Voltar</Link>
+            {/* <Link to ="/" type="submit" className="btn btn-primary btn-lg">Voltar</Link>
 
-            <Link to ="/persona" type="submit" className="btn btn-primary btn-lg">Avançar</Link>
+            <Link to ="/persona" type="submit" className="btn btn-primary btn-lg">Avançar</Link> */}
 
-            {/* <button type="submit" className="btn btn-primary btn-lg" onClick={this.saveUser}>
+            <button type="submit" className="btn btn-primary btn-lg" onClick={this.saveUser}>
                 {this.state.loading? (<div class="spinner-border" role="status">
              </div>) : "Avançar"}        
-             </button> */}
+             </button>
             </footer>
             </div>
           );

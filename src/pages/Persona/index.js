@@ -12,6 +12,7 @@ import PersonasList from '../../components/PersonasList';
 class Persona extends Component {
 
     state = {
+        owner: "",
         name: "",
         sex: "",
         age: "",
@@ -31,13 +32,59 @@ class Persona extends Component {
 
     }
 
+
     handleChange = ({target}) => {
         console.log (target.name, target.value)
         this.setState ({[target.name] : target.value})
     }
-    selectImage = (image) => {
-        this.setState ({image})
+    
+    componentDidMount () {
+        console.log("Componente montado")
+        this.setState ({owner : this.props.match.params.ownerId})
+        console.log(this.props.match.params.ownerId) 
     }
+
+    savePersona = async () => {
+        const {        owner,
+        name,
+        sex,
+        age,
+        role,
+        dreams,
+        problems,
+        where_works,
+        scolarship,
+        communication_means,
+        company_help,
+        company_workers,
+        company_role,
+        image,} = this.state
+
+        try{
+
+            const response = await api.post ("/persona" , {owner,
+                name,
+                sex,
+                age,
+                role,
+                dreams,
+                problems,
+                where_works,
+                scolarship,
+                communication_means,
+                company_help,
+                company_workers,
+                company_role,
+                image,})
+            console.log (response.data)
+
+
+        }catch (err){
+            console.log(err)
+
+        }
+    }
+
     renderForms() {
         const {renderForm} = this.state
 
@@ -58,10 +105,13 @@ class Persona extends Component {
         if (renderForm === 1 && n === -1) {
             return
         } else if (renderForm === 5 && n === 1) {
-            return
+            this.savePersona ()
          } else {
             this.setState ({renderForm : renderForm + n})
          }
+    }
+    selectImage = (image) => {
+        this.setState ({image})
     }
 
     render() {
@@ -74,7 +124,7 @@ class Persona extends Component {
             <footer className="mySpacingContainer">
             <button onClick={() => (this.changeForms(-1))} type="submit" className="btn btn-primary btn-lg">Voltar</button>
 
-            <button onClick={() => (this.changeForms(1))} type="submit" className="btn btn-primary btn-lg">Avançar</button>
+            <button onClick={() => (this.changeForms(1))} type="submit" className="btn btn-primary btn-lg">{this.state.renderForm ===5? "Salvar" : "Avançar"}</button>
        
             </footer>
             </div>
