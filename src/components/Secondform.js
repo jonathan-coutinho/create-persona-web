@@ -27,7 +27,7 @@ class SecondForm extends Component {
               <input
                name ="communication_means"
                onChange ={this.props.handleChange}
-               type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+               type="email" className="form-control" id="exampleFormControlInput1" placeholder="Exemplo: Whatsapp"></input>
         </div>  
       </form>
    );

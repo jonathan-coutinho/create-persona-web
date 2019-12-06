@@ -15,6 +15,7 @@ class FirstForm extends Component {
         <div className="form-group">
           <label htmlFor="exampleFormControlSelect1">Sexo:</label>
           <select className="form-control" id="exampleFormControlSelect1" name = "sex" onChange = {this.props.handleChange}>
+            <option></option>
             <option>Masculino</option>
             <option>Feminino</option>
           </select>
@@ -24,14 +25,14 @@ class FirstForm extends Component {
               <input
                name ="age"
                onChange ={this.props.handleChange}
-               type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+               type="email" className="form-control" id="exampleFormControlInput1" placeholder="Exemplo: 25"></input>
         </div>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Ocupação:</label>
               <input
                name ="role"
                onChange ={this.props.handleChange}
-               type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+               type="email" className="form-control" id="exampleFormControlInput1" placeholder="Exemplo: Estudante"></input>
         </div>
       
        
