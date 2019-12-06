@@ -10,7 +10,7 @@ class SecondForm extends Component {
           <label htmlFor="exampleInputEmail1">Onde sua Persona trabalha:</label>
            <input
            name = "where_works"
-           onChange={this.props.handleChange} type="email" className="form-control" id="exampleFormControlInput1" placeholder="Joaquim Teixeira"></input>
+           onChange={this.props.handleChange} type="email" className="form-control" id="exampleFormControlInput1" placeholder="Nome da empresa"></input>
         </div>
         <div className="form-group">
           <label htmlFor="exampleFormControlSelect1">Nível de escolaridade:</label>
