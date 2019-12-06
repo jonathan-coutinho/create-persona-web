@@ -1,0 +1,15 @@
+.myPersona {
+    width: 300px;
+    opacity: 0.85;
+    border-radius: 150px;
+    margin-bottom: 20px;
+    border: solid 3px blue;
+}
+.myName {
+    color:cornflowerblue;
+    margin-bottom: 10px;
+}
+.myRole {
+    color:grey;
+    margin: 10px;
+}

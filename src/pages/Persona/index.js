@@ -105,7 +105,7 @@ class Persona extends Component {
     changeForms (n) {
         const {renderForm} = this.state
         if (renderForm === 1 && n === -1) {
-            return
+            return this.props.history.push("/user")
         } else if (renderForm === 5 && n === 1) {
             this.savePersona ()
          } else {

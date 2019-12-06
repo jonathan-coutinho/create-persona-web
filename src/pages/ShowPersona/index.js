@@ -22,13 +22,11 @@ class ShowPersona extends Component {
         image:"",
         loading: false,
         renderForm: 1
-        
-
-    }
+    };
 
     handleChange = ({target}) => {
         console.log (target.name, target.value);
-        this.setState ({[target.name]:target.value});
+        this.setState ({[target.name] : target.value});
     };
     
     async componentDidMount (){
@@ -36,10 +34,10 @@ class ShowPersona extends Component {
         console.log(this.props.match.params.personaId) 
         try{
             const response = await api.get (`/persona/${this.props.match.params.personaId}`)
-            const persona = response.dada.personas[0]
+            const persona = response.data.personas[0]
             console.log (persona)
             const {name,age,sex,scolarship,communication_means,dreams,problems,company_help,image,where_works ,role} = persona
-            this.setState ({name,age,sex,scolarship,communication_means,dreams,problems,company_help,image,where_works ,role})
+            this.setState ({name,age,sex,scolarship,communication_means,dreams,problems,company_help,image,where_works,role})
         }catch(err) {
             console.log (err)
         }
@@ -47,10 +45,13 @@ class ShowPersona extends Component {
 
     render() {
 
-        const {name,age,sex,scolarship,communication_means,dreams,problems,company_help,image,where_works ,role} = this.state
+        const {name,age,sex,scolarship,communication_means,dreams,problems,company_help,where_works,role,image} = this.state
         return (
             <div className="myContainer">
-              <h2 className="header">Página de mostrar Persona</h2>
+              <h2 className="header">Essa é a sua Persona!</h2>
+              <img className ="myPersona" alt ="foto de Persona" 
+                src = {image}>
+              </img>
               <h2 className="myName">{name}</h2>
               <h3 className="myRole">{role}</h3>
 
